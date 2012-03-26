@@ -3,8 +3,8 @@
  * Plugin Name: Hybrid Tabs
  * Plugin URI: http://themehybrid.com/themes/hybrid/tabs
  * Description: Creates a tabbed widget for the Hybrid WordPress theme.
- * Version: 0.2
- * Author: Justin Tadlock
+ * Version: 0.2.1
+ * Author: Justin Tadlock, Fx Bénard
  * Author URI: http://justintadlock.com
  *
  * Hybrid Tabs is a tabbed widget that accompanies the Hybrid
@@ -38,17 +38,7 @@
  *
  * @package HybridTabs
  */
-
-/**
- * Yes, we're localizing the plugin.  This partly makes sure non-English
- * users can use it too.  To translate into your language use the
- * en_EN.po file as as guide.  Poedit is a good tool to for translating.
- * @link http://poedit.net
- *
- * @since 0.1
- */
-load_plugin_textdomain( 'hybrid_tabs', false, '/hybrid-tabs' );
-
+        
 /**
  * Make sure we get the correct directory.
  * @since 0.1
@@ -79,6 +69,7 @@ $hybrid_tabs = array();
  * Load files at the appropriate time.
  * @since 0.1
  */
+
 add_action( 'init', 'create_initial_hybrid_tabs' );
 add_action( 'plugins_loaded', 'hybrid_tabs_load_tab_functions' );
 add_action( 'wp_print_scripts', 'hybrid_tabs_load_js' );
@@ -90,8 +81,20 @@ add_action( 'widgets_init', 'hybrid_tabs_register_widgets' );
  *
  * @since 0.2
  */
+
 function create_initial_hybrid_tabs() {
 	global $wp_taxonomies;
+	
+/**
+ * Yes, we're localizing the plugin.  This partly makes sure non-English
+ * users can use it too.  To translate into your language use the
+ * en_EN.po file as as guide.  Poedit is a good tool to for translating.
+ * @link http://poedit.net
+ *
+ * @since 0.1
+ */
+	/* Translations. */
+	load_plugin_textdomain ('hybrid_tabs', FALSE, dirname( plugin_basename( __FILE__ ) ) . '/languages/');
 
 	/* Authors list. */
 	register_hybrid_tab( 'authors', array( 'label' => __('Authors', 'hybrid_tabs'), 'callback' => 'hybrid_tabs_authors' ) );
