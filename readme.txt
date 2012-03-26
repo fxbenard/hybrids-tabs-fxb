@@ -5,6 +5,7 @@ Tags: widget, jquery, javascript
 Requires at least: 2.8
 Tested up to: 2.8
 Stable tag: 0.2
+FxB tag: 0.2.1
 
 Adds a tabbed widget to the Hybrid theme framework that can be used in multiple widget areas.
 
@@ -114,8 +115,14 @@ There are currently no screenshots.
 
 == Changelog ==
 
-**Version 0.2**
+**Version 0.2.1**
+*FxB changelog*
+* Updated the 'create_initial_hybrid_tabs' function to proprely load the textdomain
+* Created the languages folder
+* Updated the po and mo files
+* Created the hybrid_tabs-fr_FR.po
 
+**Version 0.2**
 * Completely recoded from the ground up.
 * Widget uses WordPress 2.8's new widget class.
 * Created additional tab options.
